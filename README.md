@@ -9,3 +9,6 @@
 
 # 4º COMMIT #
   Criação de hooks(useAgencias, useClientes e useContas) para uso da fetch API
+
+# 5º COMMIT #
+  Criação do arquivo ClientesPage e dos components(ClienteCard e Pagination) e correção de erro ao chamar a lib papaparse

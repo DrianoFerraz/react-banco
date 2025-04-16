@@ -1,36 +1,55 @@
-import { useEffect, useState } from "react";
-import { Cliente } from "../types/cliente";
-import { fetchCSV } from "../services/fetchCSV";
+import { useState, useEffect } from "react";
 import Papa from "papaparse";
 
-export function useClientes() {
-  const [clientes, setClientes] = useState<Cliente[]>([]);
-  const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    async function loadClientes() {
-      try {
-        const csv = await fetchCSV("https://docs.google.com/spreadsheets/d/1PBN_HQOi5ZpKDd63mouxttFvvCwtmY97Tb5if5_cdBA/gviz/tq?tqx=out:csv&sheet=clientes");
-        const parsed = Papa.parse(csv, { header: true, skipEmptyLines: true }).data as any[];
-
-        const data: Cliente[] = parsed.map((row) => ({
-          ...row,
-          dataNascimento: new Date(row.dataNascimento),
-          rendaAnual: parseFloat(row.rendaAnual),
-          patrimonio: parseFloat(row.patrimonio),
-          codigoAgencia: parseInt(row.codigoAgencia),
-        }));
-
-        setClientes(data);
-      } catch (e) {
-        console.error(e);
-      } finally {
-        setLoading(false);
-      }
-    }
-
-    loadClientes();
-  }, []);
-
-  return { clientes, loading };
+export interface Cliente {
+    id: string;
+    cpfCnpj: string;
+    rg?: string;
+    dataNascimento: Date;
+    nome: string;
+    nomeSocial?: string;
+    email: string;
+    endereco: string;
+    rendaAnual: number;
+    patrimonio: number;
+    estadoCivil: "Solteiro" | "Casado" | "Viúvo" | "Divorciado";
+    codigoAgencia: number;
 }
+
+export const useClientes = () => {
+    const [clientes, setClientes] = useState<Cliente[]>([]);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        const fetchClientes = async () => {
+            try {
+                const response = await fetch(
+                    "https://docs.google.com/spreadsheets/d/1PBN_HQOi5ZpKDd63mouxttFvvCwtmY97Tb5if5_cdBA/gviz/tq?tqx=out:csv&sheet=clientes"
+                );
+                const csvText = await response.text();
+                Papa.parse(csvText, {
+                    header: true,
+                    skipEmptyLines: true,
+                    complete: (result) => {
+                        const clientesData = result.data.map((cliente: any) => ({
+                            ...cliente,
+                            dataNascimento: new Date(cliente.dataNascimento),
+                            rendaAnual: parseFloat(cliente.rendaAnual),
+                            patrimonio: parseFloat(cliente.patrimonio),
+                        }));
+                        setClientes(clientesData);
+                        setLoading(false);
+                    },
+                });
+            } catch (error) {
+                console.error("Erro ao buscar dados:", error);
+                setLoading(false);
+            }
+        };
+
+        fetchClientes();
+    }, []);
+
+    return { clientes, loading };
+};
