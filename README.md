@@ -5,4 +5,7 @@
   Estruturando o projeto (Novas pastas adicionadas em src)
 
 # 3º COMMIT #
-  Criação de types (Agencia, Cliente e Conta)
+  Criação do arquivo das interfaces (agencia, cliente e conta)
+
+# 4º COMMIT #
+  Criação de hooks(useAgencias, useClientes e useContas) para uso da fetch API
