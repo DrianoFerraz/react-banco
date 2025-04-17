@@ -1,38 +1,44 @@
+/* Define estilos globais para todos os elementos */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+  margin: 0; /* Remove a margem padrão */
+  padding: 0; /* Remove o preenchimento padrão */
+  box-sizing: border-box; /* Inclui bordas e preenchimentos no cálculo da largura e altura */
 }
 
+/* Define variáveis de cores e estilos para facilitar o gerenciamento */
 :root {
-  --primary-color: #1a73e8;
-  --bg-color: #f8f9fa;
-  --text-color: #212529;
-  --card-bg: #ffffff;
-  --border-radius: 8px;
-  --shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  --primary-color: #1a73e8; /* Cor primária, usada para destaques e botões */
+  --bg-color: #f8f9fa; /* Cor de fundo clara */
+  --text-color: #212529; /* Cor do texto padrão */
+  --card-bg: #ffffff; /* Cor de fundo dos cartões */
+  --border-radius: 8px; /* Raio de borda para cantos arredondados */
+  --shadow: 0 2px 8px rgba(0, 0, 0, 0.05); /* Sombra sutil */
 }
 
+/* Estilos gerais para o corpo da página */
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: var(--bg-color);
-  color: var(--text-color);
-  line-height: 1.6;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fonte suave e moderna */
+  background-color: var(--bg-color); /* Cor de fundo */
+  color: var(--text-color); /* Cor do texto */
+  line-height: 1.6; /* Altura da linha para legibilidade */
 }
 
+/* Remove o sublinhado de links e mantém a cor do texto */
 a {
-  text-decoration: none;
-  color: inherit;
+  text-decoration: none; /* Remove o sublinhado */
+  color: inherit; /* Herda a cor do texto */
 }
 
+/* Estilos de botões */
 button {
-  cursor: pointer;
-  border: none;
-  border-radius: var(--border-radius);
+  cursor: pointer; /* Aponta para o botão com o cursor */
+  border: none; /* Remove a borda padrão do botão */
+  border-radius: var(--border-radius); /* Bordas arredondadas */
 }
 
+/* Estilos para inputs e selects (campos de texto e dropdowns) */
 input, select {
-  padding: 0.5rem;
-  border: 1px solid #ccc;
-  border-radius: var(--border-radius);
+  padding: 0.5rem; /* Adiciona preenchimento interno */
+  border: 1px solid #ccc; /* Borda cinza clara */
+  border-radius: var(--border-radius); /* Bordas arredondadas */
 }

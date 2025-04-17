@@ -1,46 +1,54 @@
+/* Container para a página de todos os clientes */
 .todos-clientes-container {
-    padding: 2rem;
-  }
-  
-  .clientes-lista {
-    display: grid;
-    gap: 1.25rem;
-  }
-  
-  @media (min-width: 640px) {
+    padding: 2rem; /* Adiciona um espaçamento interno (padding) ao redor da página */
+}
+
+/* Estilo para a lista de clientes */
+.clientes-lista {
+    display: grid; /* Define a lista de clientes como uma grade (grid) */
+    gap: 1.25rem; /* Espaçamento entre os itens da lista */
+}
+
+/* Responsividade: Quando a largura da tela é maior que 640px, exibe 2 colunas */
+@media (min-width: 640px) {
     .clientes-lista {
-      grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr); /* Define a grade com 2 colunas iguais */
     }
-  }
-  
-  @media (min-width: 1024px) {
+}
+
+/* Responsividade: Quando a largura da tela é maior que 1024px, exibe 3 colunas */
+@media (min-width: 1024px) {
     .clientes-lista {
-      grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(3, 1fr); /* Define a grade com 3 colunas iguais */
     }
-  }
-  
-  .cliente-card {
-    background-color: #ffffff;
-    padding: 1rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-  }
-  
-  .cliente-card h3 {
-    font-size: 1.2rem;
-    font-weight: 600;
-  }
-  
-  .cliente-card p {
-    margin: 0.5rem 0;
-  }
-  
-  .cliente-card a {
-    color: #2563eb;
-    text-decoration: none;
-  }
-  
-  .cliente-card a:hover {
-    text-decoration: underline;
-  }
-  
+}
+
+/* Estilo para o cartão de cada cliente */
+.cliente-card {
+    background-color: #ffffff; /* Fundo branco para os cartões */
+    padding: 1rem; /* Espaçamento interno */
+    border-radius: 12px; /* Bordas arredondadas */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); /* Sombra suave ao redor do cartão */
+}
+
+/* Estilo para o título (nome do cliente) dentro do cartão */
+.cliente-card h3 {
+    font-size: 1.2rem; /* Define o tamanho da fonte */
+    font-weight: 600; /* Define a espessura da fonte */
+}
+
+/* Estilo para os parágrafos dentro do cartão */
+.cliente-card p {
+    margin: 0.5rem 0; /* Adiciona margem superior e inferior para os parágrafos */
+}
+
+/* Estilo para os links dentro do cartão */
+.cliente-card a {
+    color: #2563eb; /* Cor azul para os links */
+    text-decoration: none; /* Remove o sublinhado */
+}
+
+/* Estilo para o hover nos links dentro do cartão */
+.cliente-card a:hover {
+    text-decoration: underline; /* Adiciona o sublinhado ao passar o mouse sobre o link */
+}

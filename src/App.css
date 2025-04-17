@@ -1,104 +1,120 @@
+/* Estilo global para o body da página */
 body {
-  font-family: "Segoe UI", sans-serif;
-  background-color: #f8fafc;
-  margin: 0;
-  padding: 0;
-  color: #1f2937;
+  font-family: "Segoe UI", sans-serif; /* Define a fonte padrão */
+  background-color: #f8fafc;          /* Cor de fundo clara */
+  margin: 0;                           /* Remove margens padrão */
+  padding: 0;                          /* Remove o padding padrão */
+  color: #1f2937;                     /* Cor do texto */
 }
 
+/* Estilo para links */
 a {
-  color: #2563eb;
-  text-decoration: none;
+  color: #2563eb;                     /* Cor do texto do link */
+  text-decoration: none;              /* Remove a decoração padrão de sublinhado */
 }
 
+/* Estilo para links ao passar o mouse */
 a:hover {
-  text-decoration: underline;
+  text-decoration: underline;         /* Adiciona sublinhado quando o mouse passa por cima */
 }
 
+/* Container principal da aplicação */
 .app-container {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 2rem 1rem;
+  max-width: 900px;                   /* Limita a largura do conteúdo */
+  margin: 0 auto;                     /* Centraliza o conteúdo horizontalmente */
+  padding: 2rem 1rem;                 /* Define o padding do container */
 }
 
+/* Estilo para o cabeçalho */
 .header {
-  text-align: center;
-  margin-bottom: 2rem;
+  text-align: center;                 /* Centraliza o texto do cabeçalho */
+  margin-bottom: 2rem;                /* Espaçamento abaixo do cabeçalho */
 }
 
+/* Estilo para o container de filtros */
 .filtros {
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-  margin-bottom: 1.5rem;
+  display: flex;                      /* Usando flexbox para o layout */
+  flex-direction: column;             /* Filtros dispostos em coluna */
+  gap: 0.75rem;                       /* Espaçamento entre os filtros */
+  margin-bottom: 1.5rem;              /* Espaçamento abaixo do container de filtros */
 }
 
+/* Estilo para os inputs dentro de filtros */
 .filtros input {
-  padding: 0.75rem;
-  border-radius: 8px;
-  border: 1px solid #d1d5db;
-  font-size: 1rem;
+  padding: 0.75rem;                   /* Padding interno do input */
+  border-radius: 8px;                 /* Borda arredondada */
+  border: 1px solid #d1d5db;          /* Cor da borda */
+  font-size: 1rem;                    /* Tamanho da fonte */
 }
 
+/* Layout da lista de clientes */
 .clientes-lista {
-  display: grid;
-  gap: 1.25rem;
+  display: grid;                      /* Usando grid para exibir os clientes */
+  gap: 1.25rem;                       /* Espaçamento entre os itens da lista */
 }
 
+/* Estilo da lista de clientes para telas pequenas */
 @media (min-width: 640px) {
   .clientes-lista {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr); /* Exibe 2 colunas para telas médias */
   }
 }
 
+/* Estilo da lista de clientes para telas grandes */
 @media (min-width: 1024px) {
   .clientes-lista {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr); /* Exibe 3 colunas para telas grandes */
   }
 }
 
+/* Estilo dos cards de cliente */
 .cliente-card {
-  background-color: #ffffff;
-  padding: 1rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-  transition: transform 0.2s ease, background-color 0.2s ease;
+  background-color: #ffffff;         /* Cor de fundo branca */
+  padding: 1rem;                      /* Padding interno do card */
+  border-radius: 12px;                /* Bordas arredondadas */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); /* Sombras suaves para destacar */
+  transition: transform 0.2s ease, background-color 0.2s ease; /* Efeito suave ao passar o mouse */
 }
 
+/* Efeito de hover nos cards de clientes */
 .cliente-card:hover {
-  transform: translateY(-3px);
-  background-color: #f1f5f9;
+  transform: translateY(-3px);        /* Levanta o card ao passar o mouse */
+  background-color: #f1f5f9;          /* Altera a cor de fundo ao passar o mouse */
 }
 
+/* Estilo do foco no card */
 .cliente-card:focus {
-  outline: 2px solid #007bff; /* Cor de foco */
-  outline-offset: 4px;
+  outline: 2px solid #007bff;         /* Borda azul quando o card está em foco */
+  outline-offset: 4px;                 /* Deslocamento da borda de foco */
 }
 
+/* Estilo da paginação */
 .paginacao {
-  margin-top: 2rem;
-  text-align: center;
+  margin-top: 2rem;                   /* Espaçamento superior */
+  text-align: center;                 /* Centraliza os botões de paginação */
 }
 
+/* Estilo dos botões de paginação */
 .paginacao button {
-  padding: 0.5rem 1rem;
-  margin: 0 0.5rem;
-  border: none;
-  border-radius: 8px;
-  background-color: #3b82f6;
-  color: white;
-  font-size: 1rem;
-  cursor: pointer;
+  padding: 0.5rem 1rem;               /* Padding interno do botão */
+  margin: 0 0.5rem;                   /* Margem entre os botões */
+  border: none;                       /* Remove a borda padrão */
+  border-radius: 8px;                 /* Bordas arredondadas */
+  background-color: #3b82f6;          /* Cor de fundo azul */
+  color: white;                       /* Cor do texto (branco) */
+  font-size: 1rem;                    /* Tamanho da fonte */
+  cursor: pointer;                   /* Cursor de pointer ao passar o mouse */
 }
 
+/* Estilo para botões desabilitados de paginação */
 .paginacao button:disabled {
-  background-color: #cbd5e1;
-  cursor: not-allowed;
+  background-color: #cbd5e1;          /* Cor de fundo mais clara para indicar desabilitado */
+  cursor: not-allowed;                /* Cursor de não permitido */
 }
 
-/* Foco visual para botões e links */
+/* Estilo de foco nos botões e links */
 .paginacao button:focus, 
 .cliente-card a:focus {
-  outline: 2px solid #007bff; /* Cor de borda de foco */
-  outline-offset: 4px;
+  outline: 2px solid #007bff;         /* Borda azul ao focar no botão ou link */
+  outline-offset: 4px;                 /* Deslocamento da borda de foco */
 }
