@@ -1,3 +1,5 @@
+
+
 # 1º COMMIT #
   Criação do projeto vite - react
 
@@ -15,3 +17,6 @@
 
 # 6º COMMIT #
   Correção de erros em src(App.css, App.tsx, index.css)
+
+# 7º COMMIT #
+  Implementações finais e adição de uma lista com todos os clientes
