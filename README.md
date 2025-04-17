@@ -20,3 +20,6 @@
 
 # 7º COMMIT #
   Implementações finais e adição de uma lista com todos os clientes
+
+# 8º COMMIT #
+  Implementação de comentários em todo o código
