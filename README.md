@@ -12,7 +12,6 @@ Este é um sistema de gerenciamento de contas bancárias que consome dados de um
 3. [Pré-requisitos](#pré-requisitos)
 4. [Instalação e Execução](#instalação-e-execução)
 5. [Uso](#uso)
-6. [Estrutura do Projeto](#estrutura-do-projeto)
 
 ---
 
@@ -87,33 +86,3 @@ Contas: Exibe informações sobre as contas bancárias dos clientes.
 Agências: Exibe informações sobre as agências bancárias.
 
 O usuário pode interagir com os dados através de filtros, e a interface se adapta automaticamente para dispositivos móveis.
-
----
-
-## Estrutura do Projeto
-
-**O projeto está organizado da seguinte forma:**
-
-src/
-├── components/                    # Componentes reutilizáveis
-│   ├── ClienteCard.tsx            # Componente para exibir um cliente
-│   └── Pagination.tsx             # Componente de paginação
-├── hooks/                         # Hooks customizados
-│   ├── useAgencias.ts             # Hook para manipulação de agências
-│   ├── useClientes.ts             # Hook para manipulação de clientes
-│   └── useContas.ts               # Hook para manipulação de contas
-├── pages/                         # Páginas da aplicação
-│   ├── ClienteDetalhesPage.tsx    # Página de detalhes de cliente
-│   ├── ClientesPage.tsx           # Página com lista de clientes
-│   └── TodosClientesPage.tsx      # Página com todos os clientes
-├── services/                      # Serviços (API, chamadas para Google Sheets, etc.)
-│   └── fetchCSV.ts                # Função para buscar e processar o CSV
-├── types/                         # Tipos TypeScript
-│   ├── agencia.ts                 # Definições para agência
-│   ├── cliente.ts                 # Definições para cliente
-│   └── conta.ts                   # Definições para conta
-├── App.css                        # Estilos globais do App
-├── App.tsx                        # Componente principal da aplicação
-├── index.css                      # Estilos globais
-├── main.tsx                       # Arquivo de entrada da aplicação
-└── TodosClientes.css              # Estilos específicos da página TodosClientes
