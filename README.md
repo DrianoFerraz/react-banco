@@ -12,3 +12,6 @@
 
 # 5º COMMIT #
   Criação do arquivo ClientesPage e dos components(ClienteCard e Pagination) e correção de erro ao chamar a lib papaparse
+
+# 6º COMMIT #
+  Correção de erros em src(App.css, App.tsx, index.css)
